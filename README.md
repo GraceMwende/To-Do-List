@@ -1,2 +1,3 @@
 # To-Do-List
-Everydays' task simplified
+Everydays' tasks organized
+
