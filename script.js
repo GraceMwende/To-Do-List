@@ -30,12 +30,12 @@ listsContainer.addEventListener("click", (e) => {
 tasksContainer.addEventListener("click", (e) => {
   if (e.target.tagName.toLowerCase() === "input") {
     const selectedList = lists.find((list) => list.id === selectedListId);
-    const selectedTask = selectList.tasks.find(
+    const selectedTask = selectedList.tasks.find(
       (task) => task.id === e.target.id
     );
     selectedTask.complete = e.target.checked;
     save();
-    renderTaskCount(selectList);
+    renderTaskCount(selectedList);
   }
 });
 
@@ -112,7 +112,7 @@ function renderTasks(selectedList) {
     checkbox.id = task.id;
     checkbox.checked = task.complete;
     const label = taskElement.querySelector("label");
-    label.htmlfor = task.id;
+    label.htmlFor = task.id;
     label.append(task.name);
     tasksContainer.appendChild(taskElement);
   });
